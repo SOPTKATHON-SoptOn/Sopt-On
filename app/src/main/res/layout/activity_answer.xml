@@ -13,6 +13,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="23dp"
+            android:layout_gravity="start"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,12 +27,6 @@
             android:textStyle="bold"
             android:text="SOPT-ON"
             android:layout_gravity="center"/>
-
-        <Button
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginRight="16dp"
-            android:layout_gravity="end"/>
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -40,6 +40,15 @@
         android:text="오늘의 세미나 일정"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/loginmember_ic_graphic"
+        android:layout_marginRight="17dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"/>
 
     <TextView
         android:id="@+id/tv_date"
@@ -60,15 +69,17 @@
         android:layout_marginTop="121dp"
         android:layout_marginHorizontal="23dp"
         android:textSize="14sp"
+        android:backgroundTint="#707070"
         android:hint="오늘의 코드를 입력해주세요"
         app:layout_constraintTop_toBottomOf="@+id/tv_date"
         app:layout_constraintStart_toStartOf="@+id/tv_date"
         app:layout_constraintEnd_toEndOf="@+id/tv_date"/>
 
     <Button
+        android:id="@+id/btn_submit"
+        android:background="@drawable/round_gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/gray"
         android:paddingVertical="11dp"
         android:textColor="@color/black"
         android:textSize="14sp"

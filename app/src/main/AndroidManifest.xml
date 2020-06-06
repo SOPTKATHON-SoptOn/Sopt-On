@@ -12,19 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
       
-        <activity android:name=".AnswerAdminActivity"></activity>
-        <activity android:name=".AnswerActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".AnswerActivity" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".AnswerAdminActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AnswerActivity" >
+
+        </activity>
+        <activity android:name=".CheckAdminActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity">
+
         </activity>
     </application>
 
