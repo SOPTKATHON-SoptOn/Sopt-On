@@ -27,8 +27,12 @@ class LoginActivity : AppCompatActivity(){
                     onError = { showToast("올바르지 못한 요청입니다")},
                     onSuccess = {
                         if(it.success){
-                            startActivity<MainActivity>()
-                            finish()
+                            if(check1.isChecked()) {
+                                startActivity<MainActivity>()
+                                finish()
+                            }
+                            else
+                                startActivity<AnswerActivity>()
                         }else {
                             showToast("아이디와 비밀번호를 확인하세요.")
                         }

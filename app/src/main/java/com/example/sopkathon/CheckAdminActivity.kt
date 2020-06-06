@@ -37,6 +37,9 @@ class CheckAdminActivity : AppCompatActivity(){
             datePicker.show()
         }
 
+        main_move.setOnClickListener() {
+            startActivity<MainActivity>()
+        }
         //시간 선택
         linearLayout.setOnClickListener() {
             val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->

@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
                     onSuccess = {
                         if(it.success){
                             showToast("회원가입 성공")
-                            startActivity<MainActivity>()
+                            startActivity<LoginActivity>()
                             finish()
                         }else {
                             showToast("가입 정보를 확인하세요.")
