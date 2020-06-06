@@ -2,9 +2,6 @@ package com.example.sopkathon
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import com.example.sopkathon.data.RequestRegister
 import com.example.sopkathon.network.RequestRegisterToServer
 import kotlinx.android.synthetic.main.activity_register.*
@@ -24,10 +21,13 @@ class RegisterActivity : AppCompatActivity() {
             }   else {
                 requestToServer.service.requestRegister(
                     RequestRegister(
-                        name = ed_name.text.toString(),
-                        birthday = ed_birthday.text.toString(),
-                        id = ed_id.text.toString(),
-                        password = ed_password.text.toString()
+                        user_name = ed_name.text.toString(),
+                        user_birth = ed_birthday.text.toString(),
+                        user_id = ed_id.text.toString(),
+                        password = ed_password.text.toString(),
+                        user_fn = ybob_spinner.toString(),
+                        user_part = part_spineer.toString(),
+                        user_score = ""
                     )
                 ).customEnqueue(
                     onError = { showToast("올바르지 못한 요청입니다")},

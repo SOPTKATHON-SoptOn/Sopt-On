@@ -1,8 +1,11 @@
 package com.example.sopkathon.data
 
 data class RequestRegister (
-    val name : String,
-    val birthday : String,
-    val id : String,
-    val password : String
+    val user_name : String,
+    val user_part : String,
+    val user_id : String,
+    val user_birth : String,
+    val password : String,
+    val user_fn : String,
+    val user_score : String
 )
