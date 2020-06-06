@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="SOPT-ON"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="end"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/partName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="29dp"
+        android:paddingVertical="16dp"
+        android:paddingLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_part"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="파트"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_part"
+            app:layout_constraintStart_toEndOf="@+id/tv_part"
+            app:layout_constraintTop_toTopOf="@+id/tv_part" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="@+id/partName"
+        app:layout_constraintTop_toBottomOf="@+id/partName">
+
+        <TextView
+            android:id="@+id/tv_date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="날짜"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_date_title"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/date">
+
+        <TextView
+            android:id="@+id/tv_time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="시작 시간"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_time_title"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/time">
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="오늘의 코드"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/ev_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_answer"
+            app:layout_constraintStart_toEndOf="@+id/tv_answer"
+            app:layout_constraintTop_toTopOf="@+id/tv_answer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:text="완료"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
