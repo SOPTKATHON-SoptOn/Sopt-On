@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme">
       
       
-        <activity android:name=".AnswerAdminActivity"/>
+        <activity android:name=".AnswerAdminActivity">
+        </activity>
         <activity android:name=".AnswerActivity" />
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".MainActivity"/>
