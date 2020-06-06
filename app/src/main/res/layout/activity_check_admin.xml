@@ -1,64 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:src="@drawable/sopt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701"></ImageView>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="-38dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        tools:layout_editor_absoluteX="0dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="331dp"
-            android:layout_marginTop="350dp"
-            android:background="#F0F0F0" />
+        <Button
+            android:id="@+id/bt_all"
+            android:layout_width="57dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:textColor="@drawable/text_select"
+            android:background="@drawable/bt_select"
+            android:text="전체"
+
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bt_attend"
+            android:layout_width="57dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="4dp"
+            android:textColor="@drawable/text_select"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bt_select"
+            android:text="출석"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bt_late"
+            android:layout_width="54dp"
+            android:layout_height="26dp"
+            android:textColor="@drawable/text_select"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/bt_select"
+            android:text="지각"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/bt_absent"
+            android:layout_width="57dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="84dp"
+            android:textColor="@drawable/text_select"
+            android:layout_marginRight="84dp"
+            android:background="@drawable/bt_select"
+            android:text="결석"
+            android:textSize="12sp" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/bt_absent"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="결석"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="307dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/white"
 
-    <Button
-        android:id="@+id/bt_all"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="전체"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="307dp" />
-
-    <Button
-        android:id="@+id/bt_late"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="지각"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="307dp" />
-
-    <Button
-        android:id="@+id/bt_attend"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="출석"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="307dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
