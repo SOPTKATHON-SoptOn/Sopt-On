@@ -8,4 +8,5 @@ class CheckAdminActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_admin)
     }
+
 }

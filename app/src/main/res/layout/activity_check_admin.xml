@@ -6,35 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/bt_late"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="지각"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="333dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-38dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <Button
-        android:id="@+id/bt_all"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="전체"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="333dp" />
-
-    <Button
-        android:id="@+id/bt_attend"
-        android:layout_width="57dp"
-        android:layout_height="26dp"
-        android:background="@drawable/round2_white"
-        android:text="출석"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="333dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="331dp"
+            android:layout_marginTop="350dp"
+            android:background="#F0F0F0" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/bt_absent"
@@ -43,7 +28,37 @@
         android:background="@drawable/round2_white"
         android:text="결석"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <Button
+        android:id="@+id/bt_all"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="전체"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <Button
+        android:id="@+id/bt_late"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="지각"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <Button
+        android:id="@+id/bt_attend"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="출석"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="307dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
