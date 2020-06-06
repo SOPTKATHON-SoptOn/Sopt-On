@@ -5,11 +5,7 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
-import kotlinx.android.synthetic.main.activity_answer.*
 import kotlinx.android.synthetic.main.activity_answer_admin.*
 import kotlinx.android.synthetic.main.activity_answer_admin.tv_date
 import java.util.*
@@ -38,28 +34,18 @@ class AnswerAdminActivity : AppCompatActivity() {
 
         //시간 선택
         linearLayout.setOnClickListener() {
-            val timePicker =
-                TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
-                    tv_time.setText("" + hour + ":" + minute)
-                }, hour, minute, false)
+            val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
+                tv_time.setText("" + hour + ":" + minute)
+            }, hour, minute, false)
             timePicker.show()
         }
 
-        et_answer.addTextChangedListener(
-            object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) = Unit
-
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    btn_finish.setBackgroundResource(R.drawable.round_green)
-                    btn_finish.setTextColor(Color.WHITE)
-                }
-            }
-        )
         //완료 버튼 클릭
         btn_finish.setOnClickListener() {
+            btn_finish.setBackgroundResource(R.drawable.round_green)
+            btn_finish.setTextColor(Color.WHITE)
             startActivity(Intent(this, CheckAdminActivity::class.java))
         }
     }
+
 }
