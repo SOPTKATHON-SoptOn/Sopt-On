@@ -7,15 +7,14 @@
     android:backgroundTint="@color/white"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_marginLeft="22dp"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:text="로그인" />
+        app:srcCompat="@drawable/login_ic_logo"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/et_id"
@@ -50,7 +49,7 @@
         android:layout_marginHorizontal="24dp"
         android:layout_below="@+id/et_pw"
         android:layout_marginTop="24dp"
-        android:background="@drawable/round_gray"
+        android:background="@drawable/register_button"
         android:textColor="#ffffff"
         android:text="로그인"/>
 
@@ -59,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_login"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
@@ -72,6 +71,7 @@
             android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="28dp"
             android:text="회원가입하기" />
     </LinearLayout>
