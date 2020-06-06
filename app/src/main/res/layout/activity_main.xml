@@ -42,11 +42,10 @@
     <Button
         android:id="@+id/check_button"
         android:gravity="center_vertical"
-        android:text="파트원 출석 명단 확인하기"
         android:textSize="12sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/main_button"
+        android:background="@drawable/main_btn_memcheck"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:paddingLeft="13dp"

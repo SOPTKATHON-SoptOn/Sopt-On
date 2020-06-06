@@ -12,9 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         green_button.setOnClickListener(){
+            startActivity<AnswerAdminActivity>()
         }
 
         check_button.setOnClickListener(){
+            startActivity<CheckAdminActivity>()
         }
     }
 }

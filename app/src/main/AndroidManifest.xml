@@ -13,20 +13,18 @@
         android:theme="@style/AppTheme">
       
       
-        <activity android:name=".AnswerAdminActivity"/>
+        <activity android:name=".AnswerAdminActivity">
+        </activity>
         <activity android:name=".AnswerActivity" />
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-        <activity android:name=".CheckAdminActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".CheckAdminActivity"/>
     </application>
-
 </manifest>
