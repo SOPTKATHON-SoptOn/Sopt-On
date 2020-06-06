@@ -1,12 +1,13 @@
 package com.example.sopkathon
 
-import android.R
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_answer_admin.*
+import kotlinx.android.synthetic.main.activity_answer_admin.tv_date
 import java.util.*
 
 
@@ -24,7 +25,7 @@ class AnswerAdminActivity : AppCompatActivity() {
         val minute = c.get(Calendar.MINUTE)
 
         //날짜 선택
-        tv_date.setOnClickListener() {
+        setDateLayout.setOnClickListener() {
             val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, day ->
                 tv_date.setText(""  + year + "." + (month+1) + "." + day)
             }, year, month, day)
@@ -32,7 +33,7 @@ class AnswerAdminActivity : AppCompatActivity() {
         }
 
         //시간 선택
-        tv_time.setOnClickListener() {
+        linearLayout.setOnClickListener() {
             val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
                 tv_time.setText("" + hour + ":" + minute)
             }, hour, minute, false)
@@ -41,8 +42,9 @@ class AnswerAdminActivity : AppCompatActivity() {
 
         //완료 버튼 클릭
         btn_finish.setOnClickListener() {
-            btn_finish.setBackgroundColor(Color.parseColor("#68c85e"))
+            btn_finish.setBackgroundResource(R.drawable.round_green)
             btn_finish.setTextColor(Color.WHITE)
+            startActivity(Intent(this, CheckAdminActivity::class.java))
         }
     }
 
