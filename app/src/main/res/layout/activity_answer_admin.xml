@@ -13,6 +13,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="23dp"
+            android:layout_gravity="start"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,12 +27,6 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <Button
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="16dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
@@ -56,8 +56,8 @@
         android:id="@+id/setDateLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/round2_white"
         android:orientation="horizontal"
         android:paddingVertical="4dp"
         android:paddingLeft="16dp"
@@ -89,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="14dp"
+        android:background="@drawable/round2_white"
         android:orientation="horizontal"
         android:paddingVertical="4dp"
         android:paddingLeft="16dp"
@@ -97,7 +98,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/setDateLayout"
-        app:layout_constraintTop_toTopOf="@+id/setDateLayout">
+        app:layout_constraintTop_toTopOf="@+id/setDateLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/tv_time"
@@ -119,7 +121,10 @@
         android:id="@+id/tv_codeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="오늘의 코드 생성"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/setDateLayout"
         app:layout_constraintTop_toBottomOf="@+id/setDateLayout" />
 
@@ -127,7 +132,10 @@
         android:id="@+id/ev_answer"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_marginHorizontal="30dp"
         android:layout_marginTop="5dp"
+        android:background="@drawable/round2_white"
+        android:gravity="center"
         android:hint="오늘의 코드"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
@@ -136,6 +144,7 @@
 
     <Button
         android:id="@+id/btn_finish"
+        android:background="@drawable/round_gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"

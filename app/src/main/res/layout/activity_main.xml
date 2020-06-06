@@ -11,25 +11,25 @@
         layout="@layout/register_toolbar" />
 
     <ImageView
-        android:id="@+id/green_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/main_btn_checkon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/underLine"
-        app:layout_constraintBottom_toTopOf="@id/check_button" />
-
-    <ImageView
         android:id="@+id/red_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/mainadmin_img_graphic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/underLine"
+        android:layout_marginRight="50dp"
         app:layout_constraintBottom_toTopOf="@id/check_button"
-         />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/underLine" />
+
+    <ImageView
+        android:id="@+id/green_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_btn_checkon"
+        app:layout_constraintBottom_toTopOf="@id/check_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/underLine" />
 
     <View
         android:id="@+id/underLine"

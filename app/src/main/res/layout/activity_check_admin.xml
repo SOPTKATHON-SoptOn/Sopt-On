@@ -37,7 +37,69 @@
             android:background="@color/white"
             android:src="@drawable/navi_btn_share"/>
     </androidx.appcompat.widget.Toolbar>
+  
+<LinearLayout
+        android:id="@+id/setDateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/round2_white"
+        android:orientation="horizontal"
+        android:paddingVertical="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar">
 
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="56dp"
+            android:text="날짜 설정"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="200dp"
+            android:src="@drawable/triangle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="23dp"
+        android:background="@drawable/round2_white"
+        android:orientation="horizontal"
+        android:paddingVertical="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/setDateLayout"
+        app:layout_constraintStart_toStartOf="@+id/setDateLayout"
+        app:layout_constraintEnd_toEndOf="@+id/setDateLayout">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="200dp"
+            android:text="시작 시간 생성"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:src="@drawable/triangle" />
+    </LinearLayout>
+  
     <Button
         android:layout_width="74dp"
         android:layout_height="35dp"
