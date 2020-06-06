@@ -4,37 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/img_sopt"
-        android:layout_width="338dp"
-        android:layout_height="158dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp"
-        app:srcCompat="@drawable/sopt" />
+    <TextView
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:layout_marginLeft="22dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="로그인" />
 
     <EditText
         android:id="@+id/et_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="이메일"
+        android:layout_alignParentTop="true"
         android:layout_marginHorizontal="24dp"
-        android:layout_below="@+id/img_sopt"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="189dp"
+        android:background="@drawable/round_white"
+        android:hint="ID"
         android:inputType="text"
-        />
+        android:paddingVertical="12dp"
+        android:paddingLeft="16dp" />
 
     <EditText
         android:id="@+id/et_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="비밀번호"
-        android:layout_marginHorizontal="24dp"
         android:layout_below="@+id/et_id"
-        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_white"
+        android:hint="비밀번호"
         android:inputType="textPassword"
-        />
+        android:paddingVertical="12dp"
+        android:paddingLeft="16dp" />
 
     <Button
         android:id="@+id/btn_login"
@@ -43,6 +50,8 @@
         android:layout_marginHorizontal="24dp"
         android:layout_below="@+id/et_pw"
         android:layout_marginTop="24dp"
+        android:background="@drawable/round_gray"
+        android:textColor="#ffffff"
         android:text="로그인"/>
 
     <LinearLayout
@@ -51,18 +60,20 @@
         android:layout_below="@+id/btn_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="아직 회원이 아니신가요?"
-            />
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+         <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="SOPT가 처음이신가요?"/>
+
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="회원가입 하기"
-            />
-    </LinearLayout>>
+            android:layout_marginLeft="28dp"
+            android:text="회원가입하기" />
+    </LinearLayout>
+
 </RelativeLayout>
