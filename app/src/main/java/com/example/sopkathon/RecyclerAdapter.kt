@@ -9,8 +9,9 @@ import kotlinx.android.synthetic.main.item.view.*
 
 class RecyclerAdapter:RecyclerView.Adapter<RecyclerAdapter.MainViewHolder>(){
 
-    var items: MutableList<PeopleItem> = mutableListOf(PeopleItem("Title1", "Content1"),
-        PeopleItem("Title2", "Content2"),PeopleItem("Title3", "Content3"))
+    var items: MutableList<PeopleItem> = mutableListOf(PeopleItem("박지혜", "오후 14시 10분 출석"),
+        PeopleItem("이주현", "오후 14시 00분 출석"),PeopleItem("정현지", "오후 13시 26분 출석"),
+        PeopleItem("김영민", "오후 13시 13분 출석"),PeopleItem("정효원", "오후 12시 58분 출석"))
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) = MainViewHolder(parent)
 
@@ -21,6 +22,7 @@ class RecyclerAdapter:RecyclerView.Adapter<RecyclerAdapter.MainViewHolder>(){
             with(holer) {
                 itemname.text = item.title
                 itemtime.text = item.content
+
             }
         }
     }

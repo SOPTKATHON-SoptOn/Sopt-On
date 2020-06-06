@@ -10,11 +10,11 @@
         android:id="@+id/main_toolbar"
         layout="@layout/register_toolbar" />
 
-    <Button
-        android:id="@+id/green_image"
+    <ImageView
+        android:id="@+id/green_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="출석체크\nON"
+        android:background="@drawable/main_btn_checkon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/underLine"
@@ -24,23 +24,12 @@
         android:id="@+id/red_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:background="@drawable/mainadmin_img_graphic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/green_image"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/underLine"
         app:layout_constraintBottom_toTopOf="@id/check_button"
-        android:src="@drawable/ic_launcher_background" />
-
-
-    <ImageView
-        android:id="@+id/yellow_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/green_image"
-        app:layout_constraintTop_toBottomOf="@id/underLine"
-        android:src="@drawable/ic_launcher_background" />
+         />
 
     <View
         android:id="@+id/underLine"
