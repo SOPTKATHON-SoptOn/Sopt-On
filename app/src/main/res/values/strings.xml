@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SOPKATHON</string>
+    <string-array name="ybob_array">
+        <item>YB</item>
+        <item>OB</item>
+    </string-array>
+    <string-array name="part_array">
+        <item>기획</item>
+        <item>디자인</item>
+        <item>서버</item>
+        <item>안드로이드</item>
+        <item>IOS</item>
+    </string-array>
 </resources>
