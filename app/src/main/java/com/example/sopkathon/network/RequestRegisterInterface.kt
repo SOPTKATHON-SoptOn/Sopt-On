@@ -1,6 +1,5 @@
 package com.example.sopkathon.network
 
-import android.telecom.Call
 import com.example.sopkathon.data.RequestRegister
 import com.example.sopkathon.data.ResponseRegister
 import retrofit2.Call
