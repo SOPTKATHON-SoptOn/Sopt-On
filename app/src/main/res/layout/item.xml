@@ -11,13 +11,14 @@
     android:background="@android:color/white">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="387dp"
+        android:layout_height="31dp"
         android:layout_weight="1"
+        android:background="@android:color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:background="@android:color/white"
->
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <TextView
             android:id="@+id/main_title"
@@ -45,16 +46,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="75dp"
             android:includeFontPadding="false"
             android:text="오후 12시 58분 출석"
             android:textColor="@android:color/darker_gray"
             android:textSize="13sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </ImageView>
+            android:id="@+id/main_image"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/adminlist_btn_green"></ImageView>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

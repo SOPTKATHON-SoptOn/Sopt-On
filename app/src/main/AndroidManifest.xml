@@ -17,14 +17,15 @@
         <activity android:name=".AnswerActivity" />
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".LoginActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".CheckAdminActivity"/>
+
+        <activity android:name=".CheckAdminActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
 
