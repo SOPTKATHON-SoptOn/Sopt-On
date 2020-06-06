@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_late"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="지각"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <Button
+        android:id="@+id/bt_all"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="전체"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <Button
+        android:id="@+id/bt_attend"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="출석"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <Button
+        android:id="@+id/bt_absent"
+        android:layout_width="57dp"
+        android:layout_height="26dp"
+        android:background="@drawable/round2_white"
+        android:text="결석"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
