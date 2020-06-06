@@ -25,7 +25,5 @@
             </intent-filter>
         </activity>
         <activity android:name=".CheckAdminActivity"/>
-        </activity>
     </application>
-
 </manifest>
