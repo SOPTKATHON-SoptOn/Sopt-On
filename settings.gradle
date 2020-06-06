@@ -1,0 +1,2 @@
+rootProject.name='SOPKATHON'
+include ':app'
