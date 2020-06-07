@@ -1,11 +1,13 @@
-package com.example.sopkathon
+package com.example.sopkathon.Activity
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_answer_admin.*
+import com.example.sopkathon.R
+import com.example.sopkathon.RecyclerAdapter
+import com.example.sopkathon.startActivity
 import kotlinx.android.synthetic.main.activity_check_admin.*
 import kotlinx.android.synthetic.main.activity_check_admin.linearLayout
 import kotlinx.android.synthetic.main.activity_check_admin.setDateLayout

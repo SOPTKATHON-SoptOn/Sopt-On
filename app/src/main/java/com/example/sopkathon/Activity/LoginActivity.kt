@@ -1,7 +1,9 @@
-package com.example.sopkathon
+package com.example.sopkathon.Activity
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sopkathon.*
 import com.example.sopkathon.data.RequestLogin
 import com.example.sopkathon.network.RequestLoginToServer
 import kotlinx.android.synthetic.main.activity_login.*
@@ -13,6 +15,24 @@ class LoginActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val btncolorgreen="#68c85e"
+        val btncolorgrey="#a7a7a7"
+
+        et_id.textChangedListener {
+            if (et_id.text.isNotEmpty() && et_pw.text.isNotEmpty())
+                btn_login.setBackgroundColor(Color.parseColor(btncolorgreen))
+            else
+                btn_login.setBackgroundColor(Color.parseColor(btncolorgrey))
+        }
+
+        et_pw.textChangedListener {
+            if (et_id.text.isNotEmpty() && et_pw.text.isNotEmpty())
+                btn_login.setBackgroundColor(Color.parseColor(btncolorgreen))
+            else
+                btn_login.setBackgroundColor(Color.parseColor(btncolorgrey))
+        }
+
 
         btn_login.setOnClickListener{
             if(et_id.text.isNullOrBlank() || et_pw.text.isNullOrBlank()){

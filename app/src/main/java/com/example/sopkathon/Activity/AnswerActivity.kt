@@ -1,17 +1,14 @@
-package com.example.sopkathon
+package com.example.sopkathon.Activity
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bumptech.glide.Glide
-import com.example.sopkathon.data.RequestCheck
-import com.example.sopkathon.data.RequestLogin
+import com.example.sopkathon.R
 import com.example.sopkathon.network.RequestLoginToServer
 import com.example.sopkathon.network.RequestToServer
+import com.example.sopkathon.showToast
+import com.example.sopkathon.startActivity
 import kotlinx.android.synthetic.main.activity_answer.*
-import kotlinx.android.synthetic.main.activity_answer_admin.*
-import kotlinx.android.synthetic.main.activity_login.*
-import java.util.*
 
 class AnswerActivity : AppCompatActivity() {
 

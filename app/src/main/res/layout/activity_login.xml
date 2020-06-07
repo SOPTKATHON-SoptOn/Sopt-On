@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/white"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
 
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="99dp"
-        android:layout_height="51.8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="128dp"
         app:srcCompat="@drawable/login_ic_logo"
@@ -75,7 +75,7 @@
         android:layout_marginHorizontal="24dp"
         android:layout_below="@+id/et_pw"
         android:layout_marginTop="24dp"
-        android:background="@drawable/register_button"
+        android:radius="30dp"
         android:textColor="#ffffff"
         android:text="로그인"/>
 

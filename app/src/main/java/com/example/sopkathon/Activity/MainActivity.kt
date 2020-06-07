@@ -1,7 +1,9 @@
-package com.example.sopkathon
+package com.example.sopkathon.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sopkathon.R
+import com.example.sopkathon.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

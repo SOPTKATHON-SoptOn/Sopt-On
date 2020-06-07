@@ -1,4 +1,4 @@
-package com.example.sopkathon
+package com.example.sopkathon.Activity
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sopkathon.R
 import kotlinx.android.synthetic.main.activity_answer_admin.*
 import kotlinx.android.synthetic.main.activity_answer_admin.tv_date
 import java.util.*
@@ -15,7 +16,7 @@ class AnswerAdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.sopkathon.R.layout.activity_answer_admin)
+        setContentView(R.layout.activity_answer_admin)
 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
