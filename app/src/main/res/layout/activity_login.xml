@@ -22,7 +22,7 @@
         android:layout_alignStart="@+id/ed_id"
         android:layout_alignLeft="@+id/ed_id"
         android:layout_alignTop="@id/Logo"
-        android:layout_marginLeft="265dp"
+        android:layout_marginLeft="270dp"
         android:layout_marginTop="120dp"
         android:text="파트장"
         android:textColor="@color/black"

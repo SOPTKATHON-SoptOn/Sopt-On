@@ -2,6 +2,7 @@ package com.example.sopkathon.Activity
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_check_admin.setTimeLayout
 import kotlinx.android.synthetic.main.activity_check_admin.setDateLayout
 import kotlinx.android.synthetic.main.activity_check_admin.tv_date
 import kotlinx.android.synthetic.main.activity_check_admin.tv_time
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.check_admin_toolbar.*
 import java.util.*
 
@@ -41,7 +43,9 @@ class CheckAdminActivity : AppCompatActivity(){
         }
 
         main_move.setOnClickListener() {
-            startActivity<MainActivity>()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("check", check1.isChecked)
+            startActivity(intent)
         }
         //시간 선택
         setTimeLayout.setOnClickListener() {
