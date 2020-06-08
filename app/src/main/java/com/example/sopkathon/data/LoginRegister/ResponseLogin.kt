@@ -1,4 +1,4 @@
-package com.example.sopkathon.data
+package com.example.sopkathon.data.LoginRegister
 
 data class ResponseLogin(
     val status : Int,

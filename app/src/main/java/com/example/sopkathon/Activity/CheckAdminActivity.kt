@@ -50,7 +50,10 @@ class CheckAdminActivity : AppCompatActivity(){
         //시간 선택
         setTimeLayout.setOnClickListener() {
             val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
-                tv_time.setText("" + hour + ":" + minute)
+                if(minute != 0)
+                    tv_time.setText("" + hour + ":" + minute)
+                else
+                    tv_time.setText("" + hour + ":" + minute+"0")
             }, hour, minute, false)
             timePicker.show()
         }

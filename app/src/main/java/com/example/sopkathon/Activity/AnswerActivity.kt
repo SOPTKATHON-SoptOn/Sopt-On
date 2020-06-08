@@ -4,7 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sopkathon.R
-import com.example.sopkathon.network.RequestLoginToServer
+import com.example.sopkathon.network.LoginRegister.RequestLoginToServer
 import com.example.sopkathon.network.RequestToServer
 import com.example.sopkathon.showToast
 import com.example.sopkathon.startActivity
@@ -12,7 +12,8 @@ import kotlinx.android.synthetic.main.activity_answer.*
 
 class AnswerActivity : AppCompatActivity() {
 
-    val requestLoginToServer = RequestLoginToServer
+    val requestLoginToServer =
+        RequestLoginToServer
     val requestToServer = RequestToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,7 +4,7 @@ data class ResponseCode(
     val status: Int,
     val success: Boolean,
     val message: String,
-    val data: List<SeminarData>
+    val data: SeminarData?
 )
 
 data class SeminarData(

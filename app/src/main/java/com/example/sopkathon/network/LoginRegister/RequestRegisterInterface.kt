@@ -1,6 +1,6 @@
-package com.example.sopkathon.network
-import com.example.sopkathon.data.RequestRegister
-import com.example.sopkathon.data.ResponseRegister
+package com.example.sopkathon.network.LoginRegister
+import com.example.sopkathon.data.LoginRegister.RequestRegister
+import com.example.sopkathon.data.LoginRegister.ResponseRegister
 
 import retrofit2.http.Body
 import retrofit2.http.POST

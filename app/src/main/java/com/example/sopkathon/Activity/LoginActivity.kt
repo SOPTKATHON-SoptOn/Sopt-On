@@ -1,20 +1,24 @@
 package com.example.sopkathon.Activity
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sopkathon.*
-import com.example.sopkathon.data.RequestLogin
-import com.example.sopkathon.network.RequestLoginToServer
+import com.example.sopkathon.data.LoginRegister.RequestLogin
+import com.example.sopkathon.data.LoginRegister.RequestLoginAdmin
+import com.example.sopkathon.network.LoginRegister.RequestLoginAdminToServer
+import com.example.sopkathon.network.LoginRegister.RequestLoginToServer
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(){
 
-    val requestLoginToServer = RequestLoginToServer
+    val requestLoginToServer =
+        RequestLoginToServer
+    val requestLoginAdminToServer =
+        RequestLoginAdminToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,24 +36,44 @@ class LoginActivity : AppCompatActivity(){
             if(ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank()){
                 showToast("아이디와 비밀번호를 확인하세요.")
             }else {
-                requestLoginToServer.service.requestLogin(
-                    RequestLogin(
-                        user_id = ed_id.text.toString(),
-                        password = ed_pw.text.toString()
+                if(check1.isChecked) {
+                    requestLoginToServer.service.requestLogin(
+                        RequestLogin(
+                            user_id = ed_id.text.toString(),
+                            password = ed_pw.text.toString()
+                        )
+                    ).customEnqueue(
+                        onError = { showToast("올바르지 못한 요청입니다") },
+                        onSuccess = {
+                            if (it.success) {
+                                val intent = Intent(this, MainActivity::class.java)
+                                intent.putExtra("check", check1.isChecked)
+                                startActivity(intent)
+                            } else {
+                                showToast("아이디와 비밀번호를 확인하세요.")
+                            }
+                        }
                     )
-                ).customEnqueue(
-                    onError = { showToast("올바르지 못한 요청입니다")},
-                    onSuccess = {
-                        if(it.success) {
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("check", check1.isChecked)
-                            startActivity(intent)
+                }
+                else {
+                    requestLoginAdminToServer.service.requestLoginAdmin(
+                        RequestLoginAdmin(
+                            leader_id = ed_id.text.toString(),
+                            password = ed_pw.text.toString()
+                        )
+                    ).customEnqueue(
+                        onError = { showToast("올바르지 못한 요청입니다") },
+                        onSuccess = {
+                            if (it.success) {
+                                val intent = Intent(this, MainActivity::class.java)
+                                intent.putExtra("check", check1.isChecked)
+                                startActivity(intent)
+                            } else {
+                                showToast("아이디와 비밀번호를 확인하세요.")
+                            }
                         }
-                        else {
-                            showToast("아이디와 비밀번호를 확인하세요.")
-                        }
-                    }
-                )
+                    )
+                }
             }
         }
 

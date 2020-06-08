@@ -3,13 +3,16 @@ package com.example.sopkathon.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sopkathon.R
+import com.example.sopkathon.customEnqueue
+import com.example.sopkathon.data.RequestCode
+import com.example.sopkathon.network.RequestCodeToServer
+import com.example.sopkathon.showToast
 import com.example.sopkathon.textChangedListener
 import kotlinx.android.synthetic.main.activity_answer_admin.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -18,6 +21,8 @@ import java.util.*
 
 
 class AnswerAdminActivity : AppCompatActivity() {
+
+    val requestCodeToServer = RequestCodeToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +42,14 @@ class AnswerAdminActivity : AppCompatActivity() {
         //날짜 선택
         btn_date.setOnClickListener() {
             val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, day ->
-                btn_date.setText(""  + year + "." + (month+1) + "." + day)
+                if(month<10 && day<10)
+                    btn_date.setText(""  + year + "-0"+(month+1) + "-0" + day)
+                else if(month<10 && day >= 10)
+                    btn_date.setText(""  + year + "-0"+(month+1) + "-" + day)
+                else if(month>=10 && day<10)
+                    btn_date.setText(""  + year + "-" +(month+1) + "-0" + day)
+                else
+                    btn_date.setText(""  + year + "-" +(month+1) + "-" + day)
             }, year, month, day)
             datePicker.show()
         }
@@ -45,14 +57,37 @@ class AnswerAdminActivity : AppCompatActivity() {
         //시간 선택
         btn_time.setOnClickListener() {
             val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
-                btn_time.setText("" + hour + ":" + minute)
+                if(minute!=0)
+                    btn_time.setText("" + hour + ":" + minute)
+                else
+                    btn_time.setText("" + hour + ":" + minute+"0")
             }, hour, minute, false)
             timePicker.show()
         }
 
         //완료 버튼 클릭
         btn_submit.setOnClickListener() {
-            startActivity(Intent(this, CheckAdminActivity::class.java))
+            if (btn_date.text.toString() == "날짜 생성    " || btn_time.text.toString() == "시작 시간 생성")
+                showToast("시간과 날짜를 선택하세요.")
+            else if (ed_answer.text.toString() == "") showToast("코드를 입력하세요.")
+            else{
+                requestCodeToServer.service.requestCode(
+                    RequestCode(
+                        seminar_date = btn_date.text.toString(),
+                        seminar_time = btn_time.text.toString()+":00",
+                        seminar_code = ed_answer.text.toString()
+                    )
+                ).customEnqueue(
+                    onError = { showToast("올바르지 못한 요청입니다") },
+                    onSuccess = {
+                        if (it.success) {
+                            showToast("코드 생성 성공")
+                        } else {
+                            showToast("작성하신 내용을 확인하세요.")
+                        }
+                    }
+                )
+            }
         }
 
         main_move.setOnClickListener() {

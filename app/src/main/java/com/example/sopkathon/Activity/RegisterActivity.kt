@@ -6,13 +6,14 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.sopkathon.*
-import com.example.sopkathon.data.RequestRegister
-import com.example.sopkathon.network.RequestRegisterToServer
+import com.example.sopkathon.data.LoginRegister.RequestRegister
+import com.example.sopkathon.network.LoginRegister.RequestRegisterToServer
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
 
-    val requestToServer = RequestRegisterToServer
+    val requestRegisterToServer =
+        RequestRegisterToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
             if (ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank() || ed_name.text.isNullOrBlank() || ed_birth.text.isNullOrBlank()) {
                 showToast("가입 정보를 확인하세요")
             }   else {
-                requestToServer.service.requestRegister(
+                requestRegisterToServer.service.requestRegister(
                     RequestRegister(
                         user_name = ed_name.text.toString(),
                         user_birth = ed_birth.text.toString(),
