@@ -1,5 +1,6 @@
 package com.example.sopkathon.Activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -46,14 +47,12 @@ class LoginActivity : AppCompatActivity(){
                 ).customEnqueue(
                     onError = { showToast("올바르지 못한 요청입니다")},
                     onSuccess = {
-                        if(it.success){
-                            if(check1.isChecked()) {
-                                startActivity<MainActivity>()
-                                finish()
-                            }
-                            else
-                                startActivity<AnswerActivity>()
-                        }else {
+                        if(it.success) {
+                            val intent = Intent(this, MainActivity::class.java)
+                            intent.putExtra("check", check1.isChecked)
+                            startActivity(intent)
+                        }
+                        else {
                             showToast("아이디와 비밀번호를 확인하세요.")
                         }
                     }

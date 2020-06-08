@@ -11,16 +11,6 @@
         android:id="@+id/register_toolbar"
         layout="@layout/sopton_toolbar" />
 
-    <View
-        android:id="@+id/underLine"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="#d1d1d1"
-        android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/register_toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <Spinner
         android:id="@+id/ybob_spinner"
         android:layout_width="wrap_content"

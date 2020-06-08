@@ -9,10 +9,11 @@ import com.example.sopkathon.R
 import com.example.sopkathon.RecyclerAdapter
 import com.example.sopkathon.startActivity
 import kotlinx.android.synthetic.main.activity_check_admin.*
-import kotlinx.android.synthetic.main.activity_check_admin.linearLayout
+import kotlinx.android.synthetic.main.activity_check_admin.setTimeLayout
 import kotlinx.android.synthetic.main.activity_check_admin.setDateLayout
 import kotlinx.android.synthetic.main.activity_check_admin.tv_date
 import kotlinx.android.synthetic.main.activity_check_admin.tv_time
+import kotlinx.android.synthetic.main.check_admin_toolbar.*
 import java.util.*
 
 class CheckAdminActivity : AppCompatActivity(){
@@ -43,12 +44,11 @@ class CheckAdminActivity : AppCompatActivity(){
             startActivity<MainActivity>()
         }
         //시간 선택
-        linearLayout.setOnClickListener() {
+        setTimeLayout.setOnClickListener() {
             val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hour, minute ->
                 tv_time.setText("" + hour + ":" + minute)
             }, hour, minute, false)
             timePicker.show()
         }
     }
-
 }
