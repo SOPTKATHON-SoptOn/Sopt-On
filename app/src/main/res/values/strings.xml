@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SOPKATHON</string>
+    <string name="sopt_on">SOPT-ON</string>
+    <string name="part_list">파트원 명단</string>
     <string-array name="ybob_array">
         <item>YB</item>
         <item>OB</item>
