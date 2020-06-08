@@ -13,6 +13,24 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="24dp">
 
+        <ImageButton
+            android:id="@+id/main_move"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginRight="16dp"
+            android:background="@color/white"
+            android:src="@drawable/navi_btn_home" />
+
+
+        <ImageButton
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="16dp"
+            android:background="@color/white"
+            android:src="@drawable/navi_btn_share" />
+
         <TextView
             android:id="@+id/txt_toolbar"
             android:layout_width="wrap_content"
@@ -21,7 +39,7 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:text="@string/sopt_on"/>
+            android:text="@string/part_list"/>
 
     </androidx.appcompat.widget.Toolbar>
 

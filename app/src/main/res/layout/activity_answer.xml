@@ -6,29 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Activity.AnswerActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_marginLeft="23dp"
-            android:background="@color/white"
-            android:src="@drawable/navi_btn_home"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="SOPT-ON"
-            android:layout_gravity="center"/>
-    </androidx.appcompat.widget.Toolbar>
+    <include
+        android:id="@+id/answer_toolbar"
+        layout="@layout/answer_admin_toolbar" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -40,7 +20,7 @@
         android:textSize="16sp"
         android:text="오늘의 세미나 일정"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/answer_toolbar" />
 
     <ImageView
         android:layout_width="36dp"
