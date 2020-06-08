@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/white"
     tools:context=".Activity.LoginActivity">
 
     <ImageView
@@ -20,31 +19,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/check1"
-        android:layout_alignBottom="@+id/check1"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginRight="-1dp"
-        android:layout_marginBottom="6dp"
-        android:layout_toStartOf="@+id/check1"
-        android:layout_toLeftOf="@+id/check1"
+        android:layout_alignStart="@+id/ed_id"
+        android:layout_alignLeft="@+id/ed_id"
+        android:layout_alignTop="@id/Logo"
+        android:layout_marginLeft="265dp"
+        android:layout_marginTop="120dp"
         android:text="파트장"
         android:textColor="@color/black"
-        android:textSize="14sp" />
+        android:textSize="22sp" />
 
     <CheckBox
         android:id="@+id/check1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp" />
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/Logo"
+        android:layout_alignEnd="@id/ed_id"
+        android:layout_alignRight="@id/ed_id"
+        android:layout_marginLeft="300dp" />
 
     <EditText
-        android:id="@+id/et_id"
+        android:id="@+id/ed_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -52,30 +47,52 @@
         android:layout_marginTop="301dp"
         android:layout_below="@+id/Logo"
         android:hint="아이디를 입력해주세요"
+        android:background="@drawable/register_ed"
         android:inputType="text"
         android:paddingVertical="12dp"
         android:paddingLeft="16dp" />
 
+    <View
+        android:id="@+id/id_underLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/ed_id"
+        android:layout_alignLeft="@id/ed_id"
+        android:layout_alignRight="@id/ed_id"
+        android:layout_marginTop="5dp"
+        android:background="@color/underline" />
+
     <EditText
-        android:id="@+id/et_pw"
+        android:id="@+id/ed_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_id"
+        android:layout_below="@id/id_underLine"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
         android:hint="비밀번호를 입력해주세요"
         android:inputType="textPassword"
+        android:background="@drawable/register_ed"
         android:paddingVertical="12dp"
         android:paddingLeft="16dp" />
+
+    <View
+        android:id="@+id/pw_underLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/ed_pw"
+        android:layout_alignLeft="@id/ed_id"
+        android:layout_alignRight="@id/ed_id"
+        android:layout_marginTop="5dp"
+        android:background="@color/underline" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_pw"
+        android:layout_below="@+id/pw_underLine"
         android:layout_marginTop="20dp"
-        android:layout_alignLeft="@+id/et_pw"
-        android:layout_alignRight="@+id/et_pw"
+        android:layout_alignLeft="@+id/ed_pw"
+        android:layout_alignRight="@+id/ed_pw"
         android:radius="30dp"
         android:text="로그인"
         android:textColor="#ffffff" />
@@ -90,9 +107,9 @@
         android:orientation="vertical">
 
         <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="SOPT가 처음이신가요?"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SOPT가 처음이신가요?"/>
 
         <TextView
             android:id="@+id/tv_register"

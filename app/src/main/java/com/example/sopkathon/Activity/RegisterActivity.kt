@@ -1,8 +1,10 @@
 package com.example.sopkathon.Activity
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import com.example.sopkathon.*
 import com.example.sopkathon.data.RequestRegister
 import com.example.sopkathon.network.RequestRegisterToServer
@@ -16,43 +18,27 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val btncolorgreen="#68c85e"
-        val btncolorgrey="#a7a7a7"
-
         ed_name.textChangedListener {
-            if (ed_name.text.isNotEmpty() && ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty() && ed_birthday.text.isNotEmpty())
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
+            buttonSelector(btn_complete)
+            underLineSelector(name_underLine, ed_name)}
         ed_id.textChangedListener {
-            if (ed_name.text.isNotEmpty() && ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty() && ed_birthday.text.isNotEmpty())
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
+            buttonSelector(btn_complete)
+            underLineSelector(id_underLine, ed_id)}
         ed_pw.textChangedListener {
-            if (ed_name.text.isNotEmpty() && ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty() && ed_birthday.text.isNotEmpty())
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
-        ed_birthday.textChangedListener {
-            if (ed_name.text.isNotEmpty() && ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty() && ed_birthday.text.isNotEmpty())
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_complete.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
-
+            buttonSelector(btn_complete)
+            underLineSelector(pw_underLine, ed_pw)}
+        ed_birth.textChangedListener {
+            buttonSelector(btn_complete)
+            underLineSelector(birth_underLine, ed_birth)}
 
         btn_complete.setOnClickListener() {
-            if (ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank() || ed_name.text.isNullOrBlank() || ed_birthday.text.isNullOrBlank()) {
+            if (ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank() || ed_name.text.isNullOrBlank() || ed_birth.text.isNullOrBlank()) {
                 showToast("가입 정보를 확인하세요")
             }   else {
                 requestToServer.service.requestRegister(
                     RequestRegister(
                         user_name = ed_name.text.toString(),
-                        user_birth = ed_birthday.text.toString(),
+                        user_birth = ed_birth.text.toString(),
                         user_id = ed_id.text.toString(),
                         password = ed_pw.text.toString(),
                         user_fn = ybob_spinner.toString(),
@@ -73,5 +59,19 @@ class RegisterActivity : AppCompatActivity() {
                 )
             }
         }
+    }
+
+    private fun underLineSelector(underLine : View, ed : EditText) {
+        if (ed.text.isNotEmpty())
+            underLine.setBackgroundColor(resources.getColor(R.color.main))
+        else
+            underLine.setBackgroundColor(resources.getColor(R.color.underline))
+    }
+
+    private fun buttonSelector(btn : Button){
+        if (ed_name.text.isNotEmpty() && ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty() && ed_birth.text.isNotEmpty())
+            btn_complete.setBackgroundColor(resources.getColor(R.color.main))
+        else
+            btn_complete.setBackgroundColor(resources.getColor(R.color.btngray))
     }
 }

@@ -3,6 +3,9 @@ package com.example.sopkathon.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sopkathon.*
 import com.example.sopkathon.data.RequestLogin
@@ -17,32 +20,22 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val btncolorgreen="#68c85e"
-        val btncolorgrey="#a7a7a7"
+        ed_id.textChangedListener {
+            buttonSelector(btn_login)
+            underLineSelector(id_underLine, ed_id)}
 
-        et_id.textChangedListener {
-            if (et_id.text.isNotEmpty() && et_pw.text.isNotEmpty())
-                btn_login.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_login.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
-
-        et_pw.textChangedListener {
-            if (et_id.text.isNotEmpty() && et_pw.text.isNotEmpty())
-                btn_login.setBackgroundColor(Color.parseColor(btncolorgreen))
-            else
-                btn_login.setBackgroundColor(Color.parseColor(btncolorgrey))
-        }
-
+        ed_pw.textChangedListener {
+            buttonSelector(btn_login)
+            underLineSelector(pw_underLine, ed_pw)}
 
         btn_login.setOnClickListener{
-            if(et_id.text.isNullOrBlank() || et_pw.text.isNullOrBlank()){
+            if(ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank()){
                 showToast("아이디와 비밀번호를 확인하세요.")
             }else {
                 requestLoginToServer.service.requestLogin(
                     RequestLogin(
-                        user_id = et_id.text.toString(),
-                        password = et_pw.text.toString()
+                        user_id = ed_id.text.toString(),
+                        password = ed_pw.text.toString()
                     )
                 ).customEnqueue(
                     onError = { showToast("올바르지 못한 요청입니다")},
@@ -63,5 +56,19 @@ class LoginActivity : AppCompatActivity(){
         tv_register.setOnClickListener {
             startActivity<RegisterActivity>()
         }
+    }
+
+    private fun underLineSelector(underLine : View, ed : EditText) {
+        if (ed.text.isNotEmpty())
+            underLine.setBackgroundColor(resources.getColor(R.color.main))
+        else
+            underLine.setBackgroundColor(resources.getColor(R.color.underline))
+    }
+
+    private fun buttonSelector(btn : Button){
+        if (ed_id.text.isNotEmpty() && ed_pw.text.isNotEmpty())
+            btn.setBackgroundColor(resources.getColor(R.color.main))
+        else
+            btn.setBackgroundColor(resources.getColor(R.color.btngray))
     }
 }
