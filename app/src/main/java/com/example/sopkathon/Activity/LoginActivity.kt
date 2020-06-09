@@ -15,10 +15,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(){
 
-    val requestLoginToServer =
-        RequestLoginToServer
-    val requestLoginAdminToServer =
-        RequestLoginAdminToServer
+    val requestLoginToServer = RequestLoginToServer
+    val requestLoginAdminToServer = RequestLoginAdminToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,17 +24,17 @@ class LoginActivity : AppCompatActivity(){
 
         ed_id.textChangedListener {
             buttonSelector(btn_login)
-            underLineSelector(id_underLine, ed_id)}
+            ed_id.underLineSelector(id_underLine)}
 
         ed_pw.textChangedListener {
             buttonSelector(btn_login)
-            underLineSelector(pw_underLine, ed_pw)}
+            ed_pw.underLineSelector(pw_underLine)}
 
         btn_login.setOnClickListener{
             if(ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank()){
                 showToast("아이디와 비밀번호를 확인하세요.")
             }else {
-                if(check1.isChecked) {
+                if(admin_check.isChecked) {
                     requestLoginToServer.service.requestLogin(
                         RequestLogin(
                             user_id = ed_id.text.toString(),
@@ -47,7 +45,7 @@ class LoginActivity : AppCompatActivity(){
                         onSuccess = {
                             if (it.success) {
                                 val intent = Intent(this, MainActivity::class.java)
-                                intent.putExtra("check", check1.isChecked)
+                                intent.putExtra("check", admin_check.isChecked)
                                 startActivity(intent)
                             } else {
                                 showToast("아이디와 비밀번호를 확인하세요.")
@@ -66,7 +64,7 @@ class LoginActivity : AppCompatActivity(){
                         onSuccess = {
                             if (it.success) {
                                 val intent = Intent(this, MainActivity::class.java)
-                                intent.putExtra("check", check1.isChecked)
+                                intent.putExtra("check", admin_check.isChecked)
                                 startActivity(intent)
                             } else {
                                 showToast("아이디와 비밀번호를 확인하세요.")
@@ -80,13 +78,6 @@ class LoginActivity : AppCompatActivity(){
         tv_register.setOnClickListener {
             startActivity<RegisterActivity>()
         }
-    }
-
-    private fun underLineSelector(underLine : View, ed : EditText) {
-        if (ed.text.isNotEmpty())
-            underLine.setBackgroundColor(resources.getColor(R.color.main))
-        else
-            underLine.setBackgroundColor(resources.getColor(R.color.underline))
     }
 
     private fun buttonSelector(btn : Button){

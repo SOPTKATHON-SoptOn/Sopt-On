@@ -8,12 +8,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sopkathon.R
-import com.example.sopkathon.customEnqueue
+import com.example.sopkathon.*
 import com.example.sopkathon.data.RequestCode
 import com.example.sopkathon.network.RequestCodeToServer
-import com.example.sopkathon.showToast
-import com.example.sopkathon.textChangedListener
 import kotlinx.android.synthetic.main.activity_answer_admin.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.answer_admin_toolbar.*
@@ -37,7 +34,7 @@ class AnswerAdminActivity : AppCompatActivity() {
 
         ed_answer.textChangedListener {
             buttonSelector(btn_submit)
-            underLineSelector(code_underLine, ed_answer)}
+            ed_answer.underLineSelector(code_underLine)}
 
         //날짜 선택
         btn_date.setOnClickListener() {
@@ -91,21 +88,12 @@ class AnswerAdminActivity : AppCompatActivity() {
         }
 
         main_move.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("check", check1.isChecked)
-            startActivity(intent)
+            startActivity<MainActivity>()
         }
     }
 
-    private fun underLineSelector(underLine : View, ed : EditText) {
-        if (ed.text.isNotEmpty())
-            underLine.setBackgroundColor(resources.getColor(R.color.main))
-        else
-            underLine.setBackgroundColor(resources.getColor(R.color.underline))
-    }
-
     private fun buttonSelector(btn : Button){
-        if (ed_answer.text.isNotEmpty())
+        if (ed_answer.text.isNotEmpty() && btn_date.text.toString() != "날짜 생성    " && btn_time.text.toString() != "시작 시간 생성")
             btn.setBackgroundColor(resources.getColor(R.color.main))
         else
             btn.setBackgroundColor(resources.getColor(R.color.btngray))

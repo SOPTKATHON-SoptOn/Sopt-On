@@ -44,7 +44,8 @@
         android:background="@drawable/register_ed"
         app:layout_constraintTop_toBottomOf="@id/ybob_spinner"
         app:layout_constraintStart_toStartOf="@id/ybob_spinner"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/Cursor"/>
 
     <View
         android:id="@+id/name_underLine"
@@ -67,7 +68,8 @@
         android:background="@drawable/register_ed"
         app:layout_constraintTop_toBottomOf="@id/ed_name"
         app:layout_constraintStart_toStartOf="@id/ed_name"
-        app:layout_constraintEnd_toEndOf="@id/ed_name"/>
+        app:layout_constraintEnd_toEndOf="@id/ed_name"
+        android:theme="@style/Cursor"/>
 
     <View
         android:id="@+id/id_underLine"
@@ -90,7 +92,8 @@
         android:background="@drawable/register_ed"
         app:layout_constraintTop_toBottomOf="@id/ed_id"
         app:layout_constraintStart_toStartOf="@id/ed_name"
-        app:layout_constraintEnd_toEndOf="@id/ed_name"/>
+        app:layout_constraintEnd_toEndOf="@id/ed_name"
+        android:theme="@style/Cursor"/>
 
     <View
         android:id="@+id/pw_underLine"
@@ -113,7 +116,9 @@
         android:background="@drawable/register_ed"
         app:layout_constraintTop_toBottomOf="@id/ed_pw"
         app:layout_constraintStart_toStartOf="@id/ed_name"
-        app:layout_constraintEnd_toEndOf="@id/ed_name"/>
+        app:layout_constraintEnd_toEndOf="@id/ed_name"
+        android:theme="@style/Cursor"
+        />
 
     <View
         android:id="@+id/birth_underLine"

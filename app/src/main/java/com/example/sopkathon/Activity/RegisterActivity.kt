@@ -21,16 +21,16 @@ class RegisterActivity : AppCompatActivity() {
 
         ed_name.textChangedListener {
             buttonSelector(btn_complete)
-            underLineSelector(name_underLine, ed_name)}
+            ed_name.underLineSelector(name_underLine)}
         ed_id.textChangedListener {
             buttonSelector(btn_complete)
-            underLineSelector(id_underLine, ed_id)}
+            ed_id.underLineSelector(id_underLine)}
         ed_pw.textChangedListener {
             buttonSelector(btn_complete)
-            underLineSelector(pw_underLine, ed_pw)}
+            ed_pw.underLineSelector(pw_underLine)}
         ed_birth.textChangedListener {
             buttonSelector(btn_complete)
-            underLineSelector(birth_underLine, ed_birth)}
+            ed_birth.underLineSelector(birth_underLine)}
 
         btn_complete.setOnClickListener() {
             if (ed_id.text.isNullOrBlank() || ed_pw.text.isNullOrBlank() || ed_name.text.isNullOrBlank() || ed_birth.text.isNullOrBlank()) {
@@ -60,13 +60,6 @@ class RegisterActivity : AppCompatActivity() {
                 )
             }
         }
-    }
-
-    private fun underLineSelector(underLine : View, ed : EditText) {
-        if (ed.text.isNotEmpty())
-            underLine.setBackgroundColor(resources.getColor(R.color.main))
-        else
-            underLine.setBackgroundColor(resources.getColor(R.color.underline))
     }
 
     private fun buttonSelector(btn : Button){

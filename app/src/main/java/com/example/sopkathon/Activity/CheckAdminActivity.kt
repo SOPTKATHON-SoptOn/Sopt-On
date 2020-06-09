@@ -43,9 +43,7 @@ class CheckAdminActivity : AppCompatActivity(){
         }
 
         main_move.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("check", check1.isChecked)
-            startActivity(intent)
+            startActivity<MainActivity>()
         }
         //시간 선택
         setTimeLayout.setOnClickListener() {

@@ -65,7 +65,7 @@
         android:id="@+id/codetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="오늘의 코드 생성"
         android:textColor="@color/gray"
         android:textSize="14sp"
@@ -83,7 +83,8 @@
         android:hint="오늘의 코드"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/codetitle"
-        app:layout_constraintTop_toBottomOf="@id/codetitle" />
+        app:layout_constraintTop_toBottomOf="@id/codetitle"
+        android:theme="@style/Cursor" />
 
     <View
         android:id="@+id/code_underLine"
